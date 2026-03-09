@@ -18,3 +18,8 @@ Fixed SampleTopshelfService/Program.cs: changed .WriteTo.ColoredConsole() to .Wr
 
 Fixed all compilation errors for net10.0-windows target. Key fixes: (1) Added ServiceStartMode.cs and ServiceProcessDescriptionAttribute.cs (guarded with #if NETSTANDARD2_0) to TopShelf.ServiceInstaller; (2) Added System.Diagnostics.EventLog 9.0.0 and System.ServiceProcess.ServiceController 8.0.0 packages to TopShelf.ServiceInstaller; (3) Added Microsoft.Win32.SystemEvents 9.0.0 to Topshelf.csproj; (4) Replaced deprecated FormattedLogValues with string.Format in LoggingExtensionsLogWriter.cs; (5) Added Microsoft.Extensions.Configuration package to Configuration.Tests; (6) Used NUnit 3.14.0 for both targets to avoid NUnit 4.x breaking changes; (7) Fixed win10-x64 → win-x64 RID; (8) Made Serilog version conditional per TFM (2.10.0 for net452, 4.2.0 for net10.0-windows). Solution builds with 0 errors, 16 warnings.
 
+
+## [2026-03-09 21:44] 05-run-tests
+
+Ran tests: 42 Topshelf.Tests + 19 Extensions.Configuration.Tests = 61 total, all passing on net10.0-windows. net452 tests compile but can't run without .NET Framework runtime on this machine. CodeQL security scan: 0 alerts. Solution is ready.
+
