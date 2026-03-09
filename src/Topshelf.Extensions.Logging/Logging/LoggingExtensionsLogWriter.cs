@@ -1,4 +1,4 @@
-﻿// Copyright 2007-2015 Chris Patterson, Dru Sellers, Travis Smith, et. al.
+// Copyright 2007-2015 Chris Patterson, Dru Sellers, Travis Smith, et. al.
 //  
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 // this file except in compliance with the License. You may obtain a copy of the 
@@ -14,8 +14,7 @@ namespace Topshelf.Logging
 {
     using System;
     using Microsoft.Extensions.Logging;
-    using Microsoft.Extensions.Logging.Internal;
-
+    
     /// <summary>
     /// Implements a Topshelf <see cref="LogWriter"/> for Microsoft extensions for logging.
     /// </summary>
@@ -114,7 +113,7 @@ namespace Topshelf.Logging
         /// <param name="level">The level.</param>
         /// <param name="format">The format.</param>
         /// <param name="args">The arguments.</param>
-        public void LogFormat(LoggingLevel level, string format, params object[] args) => this.Log(level, new FormattedLogValues(format, args));
+        public void LogFormat(LoggingLevel level, string format, params object[] args) => this.Log(level, args.Length > 0 ? string.Format(format, args) : (object)format);
 
         /// <summary>
         /// Debugs the specified object.

@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\Topshelf.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -12,12 +12,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
-    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="4.7.0" />
-    <PackageReference Include="System.ServiceProcess.ServiceController" Version="4.7.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="System.Diagnostics.EventLog" Version="9.0.0" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <EmbeddedResource Update="System.Configuration.Install\System.Configuration.Install.resx">
       <LogicalName>System.Configuration.Install.resources</LogicalName>
@@ -26,5 +25,5 @@
       <LogicalName>System.ServiceProcess.resources</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
-  
+
 </Project>
